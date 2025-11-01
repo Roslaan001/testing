@@ -1,0 +1,30 @@
+services:
+  my-app:
+    build: .
+    ports:
+     - 3000:3000
+    
+    environment:
+     - MONGO_URL=mongodb://AGeTbBL0s4nv:ipxCtDMqRR1dEstSa64E1NO4p@merry.igris.cloud:37382/admin?ssl=true&authSource=admin
+
+  # mongodb:
+  #   image: mongo
+  #   ports:
+  #    - 27017:27017
+  #   environment:
+  #    - MONGO_INITDB_ROOT_USERNAME=eqwe52sNk0M0
+  #    - MONGO_INITDB_ROOT_PASSWORD=7AVwf8ruEbFsxZe3M56EI5cRh
+  #   volumes:
+  #    - mongo-data:/data/db
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_URL=mongodb://AGeTbBL0s4nv:ipxCtDMqRR1dEstSa64E1NO4p@merry.igris.cloud:37382/admin?ssl=true&authSource=admin
+    # depends_on:
+    #  - "mongodb"
+volumes:
+  mongo-data:
+    driver: local

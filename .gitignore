@@ -1,0 +1,14 @@
+node_modules
+
+.DS_Store
+
+.idea/*
+
+docker-app-key.pem
+!.idea/.gitkeep
+.vscode/*
+!.vscode/.gitkeep
+.env
+!.env.example
+dist/
+install-docker.sh
