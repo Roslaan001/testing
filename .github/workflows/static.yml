@@ -15,7 +15,10 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+        
         - name: Use repo name in a command
-          run: echo "The repository name is ${{ github.event.repository.name }}"
+          env:
+            REPO_NAME: ${{ github.event.repository.name }}
+          run: echo "The repository name is $REPO_NAME"
   
   
